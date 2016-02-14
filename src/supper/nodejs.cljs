@@ -8,7 +8,9 @@
    ((js* "require") s)))
 
 (defn env
-  [s]
-  (d/cs
-   nil
-   (aget (js* "process") "env" s)))
+  ([s]
+   (env s nil))
+  ([s default]
+   (d/cs
+    nil
+    (or (aget (js* "process") "env" s) default))))
