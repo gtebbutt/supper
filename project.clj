@@ -9,8 +9,8 @@
   {:default [:cljs-shared]
 
    :cljs-shared
-   {:dependencies [[org.clojure/clojure "1.7.0"]
-                   [org.clojure/clojurescript "1.7.228"]]
+   {:dependencies [[org.clojure/clojure "1.10.1"]
+                   [org.clojure/clojurescript "1.10.597"]]
 
     :plugins [[lein-cljsbuild "1.1.1"]]
 
