@@ -3,7 +3,7 @@
 
 (defn is-node?
   []
-  (= :nodejs (-> @cljs.env/*compiler* :options :target)))
+  (= "nodejs" (get-in @cljs.env/*compiler* [:options :closure-defines 'cljs.core/*target*])))
 
 (defmacro cs
   "Produces client or server specific code at compile time."

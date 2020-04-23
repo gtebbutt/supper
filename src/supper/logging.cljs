@@ -1,8 +1,7 @@
 (ns supper.logging
-  (:require-macros [supper.detector :as d])
-  (:require [supper.nodejs :as nodejs]))
+  (:require ["loglevel" :as loglevel]))
 
-(def logger (d/cs js/log (nodejs/require "loglevel")))
+(def logger loglevel)
 
 (defn trace
   [& msg]

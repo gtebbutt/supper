@@ -7,7 +7,7 @@
             [goog.history.Html5History :as history5]
             [supper.logging :as log]))
 
-(def global-history (d/cs (atom) nil))
+(def global-history (d/cs (atom nil) nil))
 
 (defn build-transformer
   "Custom transformer is needed to replace query parameters, rather
@@ -51,12 +51,12 @@
      (reset! global-history history))))
 
 (defn get-token
-  "Get the current URL token"
+  "Get the current URL token. This will (intentionally) crash if used before init-history!."
   []
   (.getToken @global-history))
 
 (defn set-token!
-  "Add new URL token to the history - will trigger a navigate event."
+  "Add new URL token to the history - will trigger a navigate event. This will (intentionally) crash if used before init-history!."
   [tok & [force?]]
   (.setToken @global-history tok)
 
